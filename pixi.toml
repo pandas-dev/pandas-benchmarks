@@ -1,0 +1,15 @@
+[project]
+name = "pandas-benchmarks"
+version = "0.1.0"
+description = "Environment to run the pandas benchmarks suite"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+# NOTE: pandas.pydata.org needs to be added to /etc/hosts or ~/.ssh/config, since the DNS resolves to our CDN.
+bench = "cd pandas/asv_bench && git pull && asv run ; asv publish && rsync -az --delete --exclude 'same-commit' html/ web@pandas.pydata.org:/var/www/html/benchmarks"
+
+[dependencies]
+asv = "0.6.1.*"
+python = "3.11.6.*"
+conda = "23.9.0.*"
