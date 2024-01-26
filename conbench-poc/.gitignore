@@ -1,0 +1,16 @@
+
+.DS_Store
+.vscode/
+Deas-MacBook-Air.local/
+__pycache__/
+asv_files/**
+my-files/
+no_results/
+failing/
+asv_files_ALL/
+algos2_results/
+local_env.yml
+server_env.yml
+benchmarks.json
+asv_processed_files
+alert_processed_files
